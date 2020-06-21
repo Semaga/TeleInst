@@ -33,6 +33,7 @@ def write_comment_file(medias, account):
 def Download(name):
     """
     Download function
+    This function download all function from acc
     Function takes loggin of accaunt's user
     """
 
