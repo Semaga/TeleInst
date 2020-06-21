@@ -4,9 +4,9 @@ from urllib.request import urlretrieve
 import matplotlib.pyplot as plt 
 from instagram import Account, Media, WebAgent, AsyncWebAgent
 
-def download_Photo(number, url):
+def download_Photo(url, number):
     """
-    
+    This funcrion take url-link and name/number of photo
     """
     # url = url 
     number = number
@@ -30,7 +30,7 @@ def write_comment_file(medias, account):
                 write.write("{}\n{}\n\n".format(i, media.caption))
 
 
-def DoIt(name):
+def Download(name):
     """
     Download function
     Function takes loggin of accaunt's user
@@ -63,7 +63,7 @@ def DoIt(name):
             #ебануть проверку    
             for i, media in enumerate(medias):
                 if not media.is_video:
-                    download_Photo(i, media.display_url)
+                    download_Photo(media.display_url, i)
 
             write_comment_file(medias, account)
 
@@ -81,7 +81,6 @@ def ReadNamesFromFile(FileName):
     Input - name of file with loggins
     return - list with loggins 
     """
-
     a = []
     b = ""
     with open(FileName, "r") as read:
@@ -120,6 +119,7 @@ def main():
     for name in names1:
         DoIt(name)
 
-
 if __name__ == "__main__":
     main()
+
+
