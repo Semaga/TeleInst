@@ -1,4 +1,0 @@
-Test
-	instagram
-		loggin - loggin
-		psswrd - psswrd
